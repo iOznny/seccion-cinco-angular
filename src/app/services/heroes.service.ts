@@ -55,7 +55,7 @@ export class HeroesService {
     ];
 
     constructor() {
-        console.log('Ready to use service heroes.');
+      console.log('Ready to use service heroes.');
     }
 
     getHeroes(): Heroe[] {
@@ -65,6 +65,22 @@ export class HeroesService {
     getHeroe(idx: number) {
       return this.heroes[idx];
     }
+
+    searchHeroes(termino: string): Heroe[] {
+      let heroesArr: Heroe[] = [];
+      termino = termino.toLowerCase();
+
+      for (let heroe of this.heroes) {
+        let name = heroe.name.toLowerCase();
+
+        if(name.indexOf(termino) >= 0) { 
+          heroesArr.push(heroe);
+        }
+      }
+
+      return heroesArr;
+    }
+
 }
 
 export interface Heroe {
