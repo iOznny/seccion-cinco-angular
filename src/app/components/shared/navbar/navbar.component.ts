@@ -16,7 +16,7 @@ export class NavbarComponent implements OnInit {
 
   //Realiza la busqueda del Héroe el cual se envia a un nuevo componente "SearchComponent".
   searchHeroe (heroe: string) {
-    this.router.navigate(['/heroe/search/', heroe]);
+    this.router.navigate(['/heroe/', heroe]);
   }
 
 }

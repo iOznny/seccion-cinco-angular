@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 @Injectable()
+
 export class HeroesService {
     private heroes: Heroe[] = [
         {
@@ -66,21 +67,18 @@ export class HeroesService {
       return this.heroes[idx];
     }
 
-    searchHeroes(termino: string): Heroe[] {
-      let heroesArr: Heroe[] = [];
-      termino = termino.toLowerCase();
-
-      for (let heroe of this.heroes) {
-        let name = heroe.name.toLowerCase();
-
-        if(name.indexOf(termino) >= 0) { 
-          heroesArr.push(heroe);
+    searchHeroes(termino: string) {
+      console.log(termino);
+      /* for (var pos in this.heroes) {
+        let name = this.heroes[pos].name.toLowerCase();
+      
+        if(this.heroes[pos].name.toLowerCase() == termino) {
+          return this.heroes[pos];
         }
-      }
+      } */
 
-      return heroesArr;
+      
     }
-
 }
 
 export interface Heroe {
