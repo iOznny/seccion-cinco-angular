@@ -20,10 +20,6 @@ export class HeroeComponent {
     // Consumo por Name el Heroe.
     this.activatedRoute.params.subscribe(params => {
       this.heroe = this._heroeService.searchHeroes(params['name']);
-
-      console.log(this.heroe);
-  });
-
-
+    });
   }
 }
