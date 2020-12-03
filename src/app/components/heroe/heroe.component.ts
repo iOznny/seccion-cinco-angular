@@ -12,18 +12,18 @@ export class HeroeComponent {
   heroe: any = {};
 
   constructor(private activatedRoute: ActivatedRoute, private _heroeService: HeroesService) { 
+    // Consumo por ID el Heroe.
     this.activatedRoute.params.subscribe(params => {
+      this.heroe = this._heroeService.getHeroe(params['id']);
+    });
 
-        this.heroe = this._heroeService.searchHeroes(params['name']);
+    // Consumo por Name el Heroe.
+    this.activatedRoute.params.subscribe(params => {
+      this.heroe = this._heroeService.searchHeroes(params['name']);
 
-        //this.heroe = this._heroeService.getHeroe(params['id']);
+      console.log(this.heroe);
+  });
 
-        // Asignación de nuevo campo para el logo de la empresa que pertenece.
-        //this.heroe.home == 'DC' ? this.heroe['homePicture'] = 'assets/home/dc_logo.png' : this.heroe['homePicture'] = 'assets/home/marvel_logo.png';
-        //console.log(this.heroe);
-
-      }
-    );
 
   }
 }

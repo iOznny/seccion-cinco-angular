@@ -8,7 +8,6 @@ import { Router } from "@angular/router";
 
 export class NavbarComponent implements OnInit {
   constructor(private router: Router) { 
-    
   }
 
   ngOnInit(): void {
@@ -16,7 +15,7 @@ export class NavbarComponent implements OnInit {
 
   //Realiza la busqueda del Héroe el cual se envia a un nuevo componente "SearchComponent".
   searchHeroe (heroe: string) {
-    this.router.navigate(['/heroe/', heroe]);
+    this.router.navigate(['/heroe/search/', heroe]);
   }
 
 }
