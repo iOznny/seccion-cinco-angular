@@ -3,7 +3,7 @@
         <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
             <div class="col p-4 d-flex flex-column position-static">
                 <strong class="d-inline-block mb-2 text-primary">{{ heroe.home }}</strong>
-                <h4 class="mb-0">{{ heroe.name | uppercase }} <small class="text-muted">({{ heroe.aparicion | date:'y'}})</small></h4>           
+                <h4 class="mb-0">{{ heroe.name | uppercase }} <small class="text-muted">{{ heroe.aparicion | date:'y'}}</small></h4>           
                 <p class="card-text mb-auto">{{ heroe.bio }}</p>
                 <a [routerLink]="['/heroes']" class="btn btn-outline-primary btn-block mt-5">Regresar</a>
             </div>
