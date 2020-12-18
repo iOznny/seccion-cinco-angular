@@ -59,8 +59,20 @@
 
                     <tr>
                         <td>{{ percentage }}</td>
-                        <td> percent' </td>
+                        <td> percent </td>
                         <td>{{ percentage | percent:'2.2-2' }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>{{ currency }}</td>
+                        <td> currency </td>
+                        <td>{{ currency | currency:'EUR' }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>{{ currency }}</td>
+                        <td> currency </td>
+                        <td>{{ currency | currency:'CAD':'symbol':'.0-0' }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -69,6 +81,20 @@
             <ul>
                 <li *ngFor="let item of numbers | slice:5:20">{{ item }}</li>
             </ul>
+
+            <ul>
+                <li *ngFor="let character of characters | slice:1:4">{{ character }}</li>
+            </ul>
+
+            <h4>JSON</h4>
+            <hr>
+            <div class="row">
+                <div class="col">
+                    <pre>
+                        {{ json | json }}
+                    </pre>                    
+                </div>
+            </div>
 
         </div>
     </div>
