@@ -23,6 +23,9 @@ import { HeroesComponent } from './components/heroes/heroes.component';
 import { HeroeComponent } from './components/heroe/heroe.component';
 import { HeroecardComponent } from './components/heroecard/heroecard.component';
 import { PipesComponent } from './components/pipes/pipes.component';
+import { CapitalizePipe } from './pipes/capitalize.pipe';
+import { DomsafePipe } from './pipes/domsafe.pipe';
+import { ShowpasswordPipe } from './pipes/showpassword.pipe';
 
 
 @NgModule({
@@ -34,7 +37,10 @@ import { PipesComponent } from './components/pipes/pipes.component';
     HeroesComponent,
     HeroeComponent,
     HeroecardComponent,
-    PipesComponent
+    PipesComponent,
+    CapitalizePipe,
+    DomsafePipe,
+    ShowpasswordPipe
   ],
   imports: [
     BrowserModule,

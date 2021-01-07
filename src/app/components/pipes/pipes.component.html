@@ -4,7 +4,6 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
-
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
@@ -15,6 +14,12 @@
                 </thead>
 
                 <tbody>
+                    <tr>
+                        <td>{{ nameDemo }}</td>
+                        <td> capitalize </td>
+                        <td>{{ nameDemo | capitalize }}</td>
+                    </tr>
+
                     <tr>
                         <td>{{ name }}</td>
                         <td> uppercase </td>
@@ -116,11 +121,23 @@
                         <td> 
                             date | date : 'MMMM-dd':'':{{ language }} 
                             <br>
-                            <button class="mr-1 btn btn-primary">Español</button>
-                            <button class="mr-1 btn btn-secondary">Inglés</button>
-                            <button class="mr-1 btn btn-success">Frances</button>
+                            <button (click)="language='es'" class="mr-1 btn btn-primary">Español</button>
+                            <button (click)="language='en'" class="mr-1 btn btn-secondary">Inglés</button>
+                            <button (click)="language='fr'" class="mr-1 btn btn-success">Frances</button>
                         </td>
                         <td>{{ date | date : 'MMMM-dd':'':language }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>{{ name }}</td>
+                        <td> 
+                            password - {{ active }}
+                            <br>
+                            <button (click)="active = !active" class="btn btn-primary">
+                                Activar / Desactivar
+                            </button>
+                        </td>
+                        <td>{{ name | showpassword:active }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -144,6 +161,19 @@
                 </div>
             </div>
 
+            <h3>Domsafe</h3>
+            <div class="row mt-3">
+                <div class="col">
+                    <iframe width="560"
+                        height="315" 
+                        [src]="videoURL | domsafe" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen
+                    >
+                    </iframe>
+                </div>
+            </div>
         </div>
     </div>
 </div>
