@@ -1,5 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
+
+// Idiomas de la Aplicación
+import { registerLocaleData } from "@angular/common";
+import localEs from '@angular/common/locales/es';
+import localFr from '@angular/common/locales/fr';
+registerLocaleData(localEs);
+registerLocaleData(localFr);
 
 //Routes
 import { APP_ROUTING } from "./app.routes";
@@ -16,6 +23,7 @@ import { HeroesComponent } from './components/heroes/heroes.component';
 import { HeroeComponent } from './components/heroe/heroe.component';
 import { HeroecardComponent } from './components/heroecard/heroecard.component';
 import { PipesComponent } from './components/pipes/pipes.component';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +42,11 @@ import { PipesComponent } from './components/pipes/pipes.component';
     APP_ROUTING
   ],
   providers: [
-    HeroesService
+    HeroesService,
+    {
+      provide: LOCALE_ID,
+      useValue: 'es'
+    },
   ],
   bootstrap: [AppComponent]
 })

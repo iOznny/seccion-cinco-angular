@@ -71,8 +71,56 @@
 
                     <tr>
                         <td>{{ currency }}</td>
-                        <td> currency </td>
+                        <td> currency | currency:'CAD':'symbol':'.0-0' </td>
                         <td>{{ currency | currency:'CAD':'symbol':'.0-0' }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>{{ valuePromise }}</td>
+                        <td> async </td>
+                        <td>{{ valuePromise | async }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>{{ date }}</td>
+                        <td> date </td>
+                        <td>{{ date | date }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>{{ date }}</td>
+                        <td> date : 'medium' </td>
+                        <td>{{ date | date : 'medium' }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>{{ date }}</td>
+                        <td> date : 'short' </td>
+                        <td>{{ date | date : 'short' }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>{{ date }}</td>
+                        <td> date : 'MMMM-dd' </td>
+                        <td>{{ date | date : 'MMMM-dd' }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>{{ date }}</td>
+                        <td> date | date : 'MMMM-dd':'':'en' </td>
+                        <td>{{ date | date : 'MMMM-dd':'':'en' }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>{{ date }}</td>
+                        <td> 
+                            date | date : 'MMMM-dd':'':{{ language }} 
+                            <br>
+                            <button class="mr-1 btn btn-primary">Español</button>
+                            <button class="mr-1 btn btn-secondary">Inglés</button>
+                            <button class="mr-1 btn btn-success">Frances</button>
+                        </td>
+                        <td>{{ date | date : 'MMMM-dd':'':language }}</td>
                     </tr>
                 </tbody>
             </table>
