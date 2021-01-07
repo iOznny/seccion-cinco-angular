@@ -13,6 +13,8 @@ export class PipesComponent {
   name: string = 'Capitan America';
   numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
+  language: string = 'es';
+  
   characters: string[] = [
     'Ironman',
     'Spiderman',
@@ -35,9 +37,11 @@ export class PipesComponent {
     }
   }
 
+  date: Date = new Date();
+
   valuePromise = new Promise<string>( (resolve) => {
     setTimeout(() => {
-      resolve('LLego la data');
+      resolve('Return Data');
     }, 4500);
   })
 
