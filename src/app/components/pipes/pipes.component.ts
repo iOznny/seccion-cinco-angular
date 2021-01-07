@@ -11,10 +11,11 @@ export class PipesComponent {
   }
 
   name: string = 'Capitan America';
+  nameDemo: string = 'NomBRe PRUeBa'
   numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   language: string = 'es';
-  
+
   characters: string[] = [
     'Ironman',
     'Spiderman',
@@ -39,10 +40,13 @@ export class PipesComponent {
 
   date: Date = new Date();
 
+  active: boolean = true;
+
   valuePromise = new Promise<string>( (resolve) => {
     setTimeout(() => {
       resolve('Return Data');
     }, 4500);
-  })
+  });
 
+  videoURL: string = 'https://www.youtube.com/embed/ZUECcou-34A';
 }
